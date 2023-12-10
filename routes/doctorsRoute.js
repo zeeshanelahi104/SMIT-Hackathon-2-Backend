@@ -8,14 +8,6 @@ const User = require("../models/userModel");
 router.post("/get-doctor-info-by-user-id", authMiddleware, async (req, res) => {
   try {
     const doctor = await Doctor.findOne({ userId: req.body.userId });
-    console.log(
-      "🚀 ~ file: doctorsRoute.js:11 ~ router.post ~ userId:",
-      req.body.userId
-    );
-    console.log(
-      "🚀 ~ file: doctorsRoute.js:11 ~ router.post ~ doctor:",
-      doctor
-    );
     res.status(200).send({
       success: true,
       message: "Doctor info fetched successfully",
